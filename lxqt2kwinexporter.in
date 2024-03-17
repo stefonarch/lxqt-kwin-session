@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Set keyboard layout for kwin_wayland
+kxkbrc=$XDG_CONFIG_HOME/kxkbrc
+#kwin_layout=$(cat $kxkbrc |grep  LayoutList|cut -d '=' -f2-)
+lxqt_settings=$XDG_CONFIG_HOME/lxqt/session.conf
+
+if grep -q layout "$lxqt_settings"; then
+    echo "Existing keyboard layout setting found in LXQt"
+    layout_list="LayoutList=$(cat $lxqt_settings| grep  layout| sed 's/[^=]*=["]*\([^"]*\)["]*/\1/')"
+fi
+# defaulting to us otherwise
+
+
+# Check if kwin keyboard config file exists
+if [ -f $XDG_CONFIG_HOME/kxkbrc ]; then
+echo "kxkbrc found"
+    # Check if the file contains "LayoutList"
+    if grep -q "LayoutList" "$kxkbrc"; then
+        echo "Layout already configured for Kwin"
+    else
+        echo "kxkbrc does not contain 'LayoutList, exporting...'"
+        echo $layout_list >> $XDG_CONFIG_HOME/kxkbrc
+    fi
+else
+    echo "No kxkbrc found, creating keyboard settings"
+    echo "[Layout]" > $XDG_CONFIG_HOME/kxkbrc
+    echo $layout_list >> $XDG_CONFIG_HOME/kxkbrc
+fi

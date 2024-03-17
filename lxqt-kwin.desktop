@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=LXQt Kwin (Wayland)
+Comment=LXQt Session using kwin_wayland compositor
+Exec=startlxqtkwin
+Type=Application
+Icon=kwin
+
