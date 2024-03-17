@@ -2,6 +2,9 @@
 
 >Files for an LXQt wayland session using kwin_wayland.
 
+For the working panel this is based on [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031).
+Make sure `/usr/share/applications/lxqt-panel.deskop`  matches installation path.
+For desktop, notifications, runner and session Qt6-port PRs are needed.
 
 Use your display manager to start "LXQt Kwin (Wayland)".
 `startlxqtkwin` from tty should work too.
