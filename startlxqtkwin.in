@@ -71,14 +71,14 @@ export QT_QUICK_CONTROLS_STYLE=org.kde.desktop
 
 # Import compositor from  LXQt settings:
 #export $(cat $XDG_CONFIG_HOME/lxqt/session.conf |grep wayland_compositor)
-#export WAYLAND_COMPOSITOR=kwin_wayland
+export WAYLAND_COMPOSITOR=kwin_wayland
 
 # Import and set locale and scale factor from lxqt
 export $(cat "$XDG_CONFIG_HOME"/lxqt/lxqt-config-locale.conf |grep LANG)
 export $(cat "$XDG_CONFIG_HOME"/lxqt/session.conf |grep QT_SCALE_FACTOR)
 
 # Import keyboard layout and screen settings
-#exec lxqt2kwinexporter
+lxqt2kwinexporter
 
 # Firefox and Thunderbird
 export MOZ_ENABLE_WAYLAND=1

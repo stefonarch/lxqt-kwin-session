@@ -8,9 +8,13 @@ lxqt_settings=$XDG_CONFIG_HOME/lxqt/session.conf
 if grep -q layout "$lxqt_settings"; then
     echo "Existing keyboard layout setting found in LXQt"
     layout_list="LayoutList=$(cat $lxqt_settings| grep  layout| sed 's/[^=]*=["]*\([^"]*\)["]*/\1/')"
+    else
+    echo "Not configured under LXQt x11, using '$LANG' as fallback"
+    layout_list="LayoutList=$(echo $LANG|cut -c 1,2)"
+    if echo "layout_list" | grep -q "en"; then # don't write `LayoutList=en`
+    layout_list=LayoutList=us
+    fi
 fi
-# defaulting to us otherwise
-
 
 # Check if kwin keyboard config file exists
 if [ -f $XDG_CONFIG_HOME/kxkbrc ]; then
