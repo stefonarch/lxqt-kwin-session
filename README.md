@@ -56,8 +56,10 @@ For Arch based distributions an AUR package will be available.
 * Mouse cursor and size are synced and can be set using "Appearance" setting,
 session restart required. GTK settings have to be updated after changes.
 
-* Global shortcut are handled only by kwin in `~/.config/kglobalshortcutsrc` atm.
-  *Qterminal's dropdown function and other commands or applications can be inserted using
+* Global shortcuts are handled only by kwin, adding in "Session Settings" > Autostart the command `/usr/lib/kglobalacceld` is mandatory; configuration is in `~/.config/kglobalshortcutsrc`, it has to be edited if no full plasma session is installed and KDE settings can be used.
+
+
+Qterminal's dropdown function and other commands or applications can be inserted using
 `systemsettings`- it will create a `.desktop` file in `~/.local/share/applications`.
 
 ```
@@ -85,7 +87,6 @@ with gaps and alignment to screen border.
   
 * Some X11-only applications (example: redshift) in autostart
   could lead to high CPU usage under wayland.
-  
-* Spectacle screenrecording is not working.
+
 
 [AUR]:                    https://aur.archlinux.org/packages/lxqt-kwin-session-git
