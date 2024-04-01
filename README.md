@@ -2,12 +2,13 @@
 
 >Files for an LXQt wayland session using kwin_wayland.
 
-For the working panel this is based on [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031).
+For taskbar working [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031) is needed.
 Make sure `/usr/share/applications/lxqt-panel.deskop`  matches installation path.
-For desktop, notifications, runner and session Qt6-port PRs are needed.
+For desktop, notifications, runner and session full wayland implementation is already in Github and
+will be in LXQt 2.0.
 
 Use your display manager to start "LXQt Kwin (Wayland)".
-`startlxqtkwin` from tty should work too.
+`startlxqtkwin` from tty works too.
 
 ## Screenshot
 
@@ -84,5 +85,7 @@ with gaps and alignment to screen border.
   
 * Some X11-only applications (example: redshift) in autostart
   could lead to high CPU usage under wayland.
+  
+* Spectacle screenrecording is not working.
 
 [AUR]:                    https://aur.archlinux.org/packages/lxqt-kwin-session-git
