@@ -2,8 +2,7 @@
 
 >Files for an LXQt wayland session using kwin_wayland.
 
-For taskbar, pager and showdesktop plugins in `lxqt-panel` working manual compiling [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031) is needed.
-LXQt 2.0. provides full wayland support in the desktop, notifications, runner and session.
+For taskbar, pager and showdesktop plugin support in `lxqt-panel` manual compiling [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031) is needed at the moment. Atm `lxqt-panel` has to be already installed top compile it. There is complete wayland support in desktop, notifications, runner modules with LXQt 2.0.
 
 Use your display manager to start "LXQt Kwin (Wayland)".
 `startlxqtkwin` from tty works too.
