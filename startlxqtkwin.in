@@ -82,4 +82,4 @@ lxqt2kwinexporter
 export MOZ_ENABLE_WAYLAND=1
 
 # Start the LXQt kwin session, enable xwayland and enable logout from LXQt
-exec kwin_wayland --no-kactivities --exit-with-session lxqt-session --xwayland
+exec kwin_wayland --exit-with-session lxqt-session --xwayland

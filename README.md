@@ -2,7 +2,7 @@
 
 >Files for an LXQt wayland session using kwin_wayland.
 
-For taskbar, pager and showdesktop plugin support in `lxqt-panel` manual compiling [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031) is needed at the moment. Atm `lxqt-panel` has to be already installed top compile it. There is complete wayland support in desktop, notifications, runner modules with LXQt 2.0.
+For taskbar, pager and showdesktop plugin support in `lxqt-panel` manual compiling [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031) is needed at the moment. Atm `lxqt-panel` has to be already installed to compile it. There is complete wayland support in desktop, notifications, runner modules with LXQt 2.0.
 
 Use your display manager to start "LXQt Kwin (Wayland)".
 `startlxqtkwin` from tty works too.
@@ -78,7 +78,8 @@ For volume keys `amixer sset Master 5%+`,`brightnessctl set 10%-` and
   `amixer sset Master toggle` can be used.
 For brightness keys: `brightnessctl set +10%` and `brightnessctl set 10%-`.
 
-* LXQt lock settings do not work yet. Plasma/kwin  screenlocker works. To disable
+* LXQt session lock settings are working in `lxqt-session-git`, using`loginctl lock-screen` in "Wayland Settings".
+Plasma/kwin screenlocker works. To disable
 screenlock add `  --no-lockscreen` to the options in `startlxqtkwin`.
 
 * Bottom and right panel's tooltips and menu popups have some alignment issues
@@ -87,7 +88,7 @@ with gaps and alignment to screen border.
 * Button settings in `lxqt-powermanagement` are not applied yet.
   
 * Some X11-only applications (example: redshift) in autostart
-  could lead to high CPU usage under wayland.
+  could lead to high CPU usage under wayland (in git version check "Start only under x11" in autostart settings)
 
 
 [AUR]:                    https://aur.archlinux.org/packages/lxqt-kwin-session-git
