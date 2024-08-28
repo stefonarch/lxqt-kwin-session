@@ -1,8 +1,8 @@
 # lxqt-kwin-session
 
->Files for an LXQt wayland session using kwin_wayland.
+>Files for an LXQt Wayland session using kwin_wayland.
 
-For taskbar, pager and showdesktop plugin support in `lxqt-panel` manual compiling [wayland-taskbar PR](https://github.com/lxqt/lxqt-panel/pull/2031) is needed at the moment. Atm `lxqt-panel` has to be already installed to compile it. There is complete wayland support in desktop, notifications, runner modules with LXQt 2.0.
+For taskbar, pager and showdesktop plugin support in `lxqt-panel` compiling [lxqt-panel-git](https://github.com/lxqt/lxqt-panel) is needed at the moment; [AUR](https://aur.archlinux.org/packages/lxqt-panel-git) is available. There is complete wayland support in desktop, notifications, runner modules with LXQt 2.0.
 
 Use your display manager to start "LXQt Kwin (Wayland)".
 `startlxqtkwin` from tty works too.
@@ -91,4 +91,3 @@ with gaps and alignment to screen border.
   could lead to high CPU usage under wayland (in git version check "Start only under x11" in autostart settings)
 
 
-[AUR]:                    https://aur.archlinux.org/packages/lxqt-kwin-session-git
