@@ -58,10 +58,13 @@ cmake ..  -DCMAKE_INSTALL_PREFIX=/usr  -DCMAKE_BUILD_TYPE=Debug && make -j4
 * Mouse cursor and size are synced and can be set using "Appearance" setting,
 session restart required. GTK settings have to be updated after changes.
 
-* Global shortcuts are handled only by kwin, adding in "Session Settings" > Autostart the command `/usr/lib/kglobalacceld` is mandatory; configuration is in `~/.config/kglobalshortcutsrc`, it has to be edited if no full plasma session is installed and KDE settings can be used.
+* Global shortcuts are handled only by kwin, configuration is in `~/.config/kglobalshortcutsrc`, it has to be edited if no full plasma session is installed and KDE's `systemsettings` can be used.
 
 Qterminal's dropdown function and other commands or applications can be inserted using
-`systemsettings`- it will create a `.desktop` file in `~/.local/share/applications`.
+`systemsettings`- it will create a `.desktop` file in `~/.local/share/applications`. Ottherwise:
+
+
+``~/.config/kglobalshortcutsrc`:
 
 ```
 [services][lxqt-runner.desktop]
@@ -74,6 +77,17 @@ _launch=Meta+P
 _launch=F12
 
 ```
+Example for `~/.local/share/applications/lxqt-runner.desktop`:
+
+```
+[Desktop Entry]
+Exec=/bin/lxqt-runner
+Name=lxqt-runner
+NoDisplay=true
+Type=Application
+```
+
+
 For volume keys `amixer sset Master 5%+`,`brightnessctl set 10%-` and
   `amixer sset Master toggle` can be used.
 For brightness keys: `brightnessctl set +10%` and `brightnessctl set 10%-`.
